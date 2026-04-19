@@ -2,7 +2,7 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+
 
 | Arquivo | Formato | Utilização no Agente |
 |---------|---------|---------------------|
@@ -16,7 +16,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 ## Adaptações nos Dados
 
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
+
 
 Os dados foram enriquecidos com interpretações derivadas para melhorar a inteligência do agente:
 
@@ -45,7 +45,7 @@ Os dados foram enriquecidos com interpretações derivadas para melhorar a intel
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
+
 
 - `transacoes.csv` e `historico_atendimento.csv` são carregados via pandas  
 - `perfil_investidor.json` e `produtos_financeiros.json` são carregados como objetos JSON  
@@ -55,7 +55,7 @@ Os dados são processados no início da aplicação e mantidos em memória para 
 ---
 
 ### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
+
 
 O agente utiliza uma abordagem dinâmica:
 
@@ -75,7 +75,7 @@ Isso evita sobrecarga de contexto e melhora a precisão das respostas.
 
 ## Exemplo de Contexto Montado
 
-> Mostre um exemplo de como os dados são formatados para o agente.
+
 
 ```
 Dados do Cliente:
