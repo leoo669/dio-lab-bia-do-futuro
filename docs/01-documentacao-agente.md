@@ -58,21 +58,23 @@ O tom é acessível, claro e levemente informal, evitando termos técnicos compl
 ```mermaid
 flowchart TD
     A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
+    B --> C[Backend]
     C --> D[Base de Conhecimento]
     D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    C --> E[LLM]
+    E --> F[Validação]
+    F --> G[Resposta]
+    G --> B
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | Chatbot interativo em Streamlit |
+| LLM | Modelo de linguagem via API (ex: GPT) |
+| Base de Conhecimento | Arquivos CSV e JSON com dados do cliente |
+| Validação | Regras para evitar alucinações e garantir consistência |
 
 ---
 
@@ -80,12 +82,19 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] O agente responde apenas com base nos dados fornecidos (CSV/JSON)
+- [ ] Todas as recomendações são justificadas com base nos dados do cliente
+- [ ] Quando não há informação suficiente, o agente informa explicitamente a limitação
+- [ ] O agente evita suposições e não inventa dados
+- [ ] Não realiza recomendações de investimento sem considerar o perfil do cliente
+- [ ] Prioriza respostas seguras em vez de respostas completas
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- [ ] Não acessa dados em tempo real externos (mercado financeiro, notícias, etc.)
+- [ ] Não substitui um consultor financeiro profissional
+- [ ] Não garante retorno financeiro em investimentos
+- [ ] Não toma decisões automaticamente pelo usuário
+- [ ] Não responde perguntas fora do contexto dos dados disponíveis
+- [ ] Não realiza operações financeiras (como transferências ou investimentos)
