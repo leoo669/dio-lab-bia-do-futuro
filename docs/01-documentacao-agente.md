@@ -3,12 +3,12 @@
 ## Caso de Uso
 
 ### Problema
-> Qual problema financeiro seu agente resolve?
+
 
 Muitos clientes têm dificuldade em entender seus próprios hábitos financeiros, o que leva a gastos descontrolados, falta de planejamento e decisões pouco informadas sobre economia e investimentos. Além disso, a maioria das soluções disponíveis é reativa, ou seja, só responde quando o usuário pergunta, sem antecipar problemas ou oportunidades.
 
 ### Solução
-> Como o agente resolve esse problema de forma proativa?
+
 
 O agente atua como um consultor financeiro inteligente que analisa continuamente os dados do cliente (transações, perfil e histórico) para:
 
@@ -20,7 +20,6 @@ Apoiar o cliente na tomada de decisão com base em dados reais
 Além disso, o agente interage de forma proativa, enviando alertas e recomendações mesmo sem solicitação direta do usuário.
 
 ### Público-Alvo
-> Quem vai usar esse agente?
 
 Pessoas físicas que desejam melhorar o controle financeiro
 Usuários com dificuldade em organizar gastos mensais
@@ -35,12 +34,12 @@ Clientes de instituições financeiras digitais (bancos, fintechs)
 Fin
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
+
 
 O agente possui um comportamento consultivo e proativo, atuando como um assessor financeiro pessoal. Ele é orientado por dados, evita suposições e busca sempre oferecer recomendações úteis e práticas. Também tem um papel educativo, ajudando o usuário a entender melhor suas decisões financeiras.
 
 ### Tom de Comunicação
-> Formal, informal, técnico, acessível?
+
 
 O tom é acessível, claro e levemente informal, evitando termos técnicos complexos. A comunicação é objetiva, mas amigável, transmitindo confiança sem ser excessivamente rígida ou robótica.
 
@@ -90,7 +89,7 @@ flowchart TD
 - [ ] Prioriza respostas seguras em vez de respostas completas
 
 ### Limitações Declaradas
-> O que o agente NÃO faz?
+
 
 - [ ] Não acessa dados em tempo real externos (mercado financeiro, notícias, etc.)
 - [ ] Não substitui um consultor financeiro profissional
