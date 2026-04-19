@@ -11,8 +11,6 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 | `produtos_financeiros.json` | JSON | Filtrar e sugerir produtos compatíveis com o perfil do cliente |
 | `transacoes.csv` | CSV | Analisar comportamento financeiro, padrões de consumo e capacidade de investimento |
 
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
 
 ---
 
