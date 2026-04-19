@@ -6,10 +6,10 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 | Arquivo | Formato | Utilização no Agente |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+| `historico_atendimento.csv` | CSV | Identificar interesses do cliente (ex: Tesouro Selic, CDB) e evitar recomendações repetidas |
+| `perfil_investidor.json` | JSON | Personalizar recomendações com base em renda, objetivos e perfil de risco |
+| `produtos_financeiros.json` | JSON | Filtrar e sugerir produtos compatíveis com o perfil do cliente |
+| `transacoes.csv` | CSV | Analisar comportamento financeiro, padrões de consumo e capacidade de investimento |
 
 > [!TIP]
 > **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
@@ -20,7 +20,27 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+Os dados foram enriquecidos com interpretações derivadas para melhorar a inteligência do agente:
+
+### Classificação de gastos por categoria:
+- Moradia: R$ 1.380  
+- Alimentação: R$ 570  
+- Transporte: R$ 295  
+- Saúde: R$ 188  
+- Lazer: R$ 55,90  
+
+### Cálculo de indicadores financeiros:
+- Receita mensal: R$ 5.000  
+- Total de despesas: R$ 2.488,90  
+- Capacidade de poupança estimada: ~R$ 2.500  
+
+### Análise de perfil:
+- Perfil: moderado  
+- Não aceita alto risco  
+- Foco atual: reserva de emergência  
+
+### Progresso de metas:
+- Reserva de emergência: 66% concluída (R$ 10.000 de R$ 15.000)
 
 ---
 
@@ -29,12 +49,29 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+- `transacoes.csv` e `historico_atendimento.csv` são carregados via pandas  
+- `perfil_investidor.json` e `produtos_financeiros.json` são carregados como objetos JSON  
+
+Os dados são processados no início da aplicação e mantidos em memória para consultas rápidas.
+
+---
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+O agente utiliza uma abordagem dinâmica:
+
+- Seleciona apenas os dados relevantes para cada pergunta  
+- Resume informações antes de enviar ao modelo  
+- Cruza diferentes fontes para gerar contexto mais rico  
+
+**Exemplos:**
+
+- Pergunta sobre gastos → usa transações + agregações  
+- Sugestão de investimento → usa perfil + produtos + histórico  
+- Acompanhamento de meta → usa perfil + progresso calculado  
+
+Isso evita sobrecarga de contexto e melhora a precisão das respostas.
 
 ---
 
@@ -45,11 +82,32 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ```
 Dados do Cliente:
 - Nome: João Silva
+- Idade: 32 anos
+- Renda mensal: R$ 5.000
 - Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Aceita risco alto: Não
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
+Objetivos:
+- Reserva de emergência: R$ 15.000 (66% concluída)
+- Entrada de imóvel: R$ 50.000 até 2027
+
+Resumo financeiro:
+- Total de gastos no mês: R$ 2.488,90
+- Capacidade de poupança: ~R$ 2.500
+- Maior gasto: Moradia (R$ 1.380)
+
+Últimas transações relevantes:
+- Supermercado: R$ 450
+- Restaurante: R$ 120
+- Combustível: R$ 250
+
+Histórico de interações:
+- Interesse em Tesouro Selic e CDB
+- Já buscou informações sobre reserva de emergência
+
+Produtos elegíveis:
+- Tesouro Selic (baixo risco)
+- CDB Liquidez Diária (baixo risco)
+- Fundo Multimercado (risco médio)
 ...
 ```
