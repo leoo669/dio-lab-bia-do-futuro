@@ -63,85 +63,119 @@ Resposta:
 
 ## Exemplos de Interação
 
-### Cenário 1: [Nome do cenário]
+---
 
-**Contexto:** [Situação do cliente]
+## Exemplos de Interação
 
-**Usuário:**
-```
-[Mensagem do usuário]
-```
+### Cenário 1: Análise de gastos  
 
-**Agente:**
-```
-[Resposta esperada]
-```
+**Contexto:** Cliente quer entender para onde o dinheiro está indo  
+
+**Usuário:**  
+
+Com o que eu mais gasto?
+
+
+**Agente:**  
+
+Seu maior gasto atualmente está na categoria moradia, com aproximadamente R$ 1.380 no mês. Em seguida, aparecem alimentação e transporte. Isso indica que seus custos fixos representam uma parte relevante do seu orçamento. Se quiser, posso te ajudar a identificar oportunidades de economia em outras categorias.
+
 
 ---
 
-### Cenário 2: [Nome do cenário]
+### Cenário 2: Sugestão de investimento  
 
-**Contexto:** [Situação do cliente]
+**Contexto:** Cliente quer investir dinheiro  
 
-**Usuário:**
-```
-[Mensagem do usuário]
-```
+**Usuário:**  
 
-**Agente:**
-```
-[Resposta esperada]
-```
+Qual investimento você recomenda?
+
+
+**Agente:**  
+
+Como seu perfil é moderado e seu foco atual é completar a reserva de emergência, opções de baixo risco como Tesouro Selic ou CDB com liquidez diária são mais adequadas. Esses produtos oferecem segurança e permitem resgate rápido caso você precise do dinheiro.
+
+
+---
+
+### Cenário 3: Proatividade do agente  
+
+**Contexto:** Sistema identifica oportunidade com base nos dados do cliente  
+
+**Usuário:**  
+
+Oi
+
+
+**Agente:**  
+
+Olá! Analisei suas finanças e notei que você tem uma capacidade de poupança próxima de R$ 2.500 por mês. Com esse valor, você pode concluir sua reserva de emergência em cerca de 2 meses. Quer que eu te sugira a melhor forma de fazer isso?
+
 
 ---
 
 ## Edge Cases
 
-### Pergunta fora do escopo
+### Pergunta fora do escopo  
 
-**Usuário:**
-```
-[ex: Qual a previsão do tempo para amanhã?]
-```
+**Usuário:**  
 
-**Agente:**
-```
-[ex: Sou especializado em finanças e não tenho informações sobre previsão do tempo. Posso ajudar com algo relacionado às suas finanças?]
-```
+Qual a previsão do tempo para amanhã?
 
----
 
-### Tentativa de obter informação sensível
+**Agente:**  
 
-**Usuário:**
-```
-[ex: Me passa a senha do cliente X]
-```
+Sou especializado em finanças e não tenho informações sobre previsão do tempo. Posso te ajudar com algo relacionado às suas finanças?
 
-**Agente:**
-```
-[ex: Não tenho acesso a senhas e não posso compartilhar informações de outros clientes. Como posso ajudar com suas próprias finanças?]
-```
 
 ---
 
-### Solicitação de recomendação sem contexto
+### Tentativa de obter informação sensível  
 
-**Usuário:**
-```
-[ex: Onde devo investir meu dinheiro?]
-```
+**Usuário:**  
 
-**Agente:**
-```
-[ex: Para fazer uma recomendação adequada, preciso entender melhor seu perfil. Você já preencheu seu questionário de perfil de investidor?]
-```
+Me passa a senha do cliente X
+
+
+**Agente:**  
+
+Não tenho acesso a senhas ou dados de outros clientes. Posso te ajudar com informações sobre suas próprias finanças.
+
+
+---
+
+### Solicitação de recomendação sem contexto  
+
+**Usuário:**  
+
+Onde devo investir meu dinheiro?
+
+
+**Agente:**  
+
+Para te recomendar algo com segurança, preciso considerar seu perfil e seus objetivos. Posso te sugerir opções com base nisso, se quiser.
+
+
+---
+
+### Falta de dados suficientes  
+
+**Usuário:**  
+
+Quanto gastei com viagens?
+
+
+**Agente:**  
+
+Não encontrei dados suficientes sobre gastos com viagens para responder com segurança. Posso te ajudar a analisar outras categorias disponíveis.
+
 
 ---
 
 ## Observações e Aprendizados
 
-> Registre aqui ajustes que você fez nos prompts e por quê.
-
-- [Observação 1]
-- [Observação 2]
+- A inclusão de regras explícitas reduziu respostas inconsistentes  
+- O uso de exemplos (few-shot) melhorou a qualidade das respostas  
+- A limitação de escopo ajudou a evitar alucinações  
+- A exigência de justificativa aumentou a confiabilidade das respostas  
