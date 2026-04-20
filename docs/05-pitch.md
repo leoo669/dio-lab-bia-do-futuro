@@ -1,44 +1,67 @@
 # Pitch (3 minutos)
 
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
- 
-## Roteiro Sugerido
+## 1. O Problema
 
-### 1. O Problema (30 seg)
-> Qual dor do cliente você resolve?
+Muitas pessoas recebem salário todo mês, usam aplicativos bancários diariamente, mas ainda não entendem claramente seus hábitos financeiros. Gastam sem perceber, não organizam metas e têm dificuldade para escolher investimentos adequados.
 
-[Sua descrição aqui]
+Além disso, a maioria das soluções atuais apenas responde perguntas. Elas não antecipam riscos, não alertam oportunidades e não acompanham o cliente de forma inteligente.
 
-### 2. A Solução (1 min)
-> Como seu agente resolve esse problema?
+## 2. A Solução
 
-[Sua descrição aqui]
+Para resolver isso, criamos o **Fin**, um agente financeiro inteligente com IA Generativa que atua como consultor pessoal.
 
-### 3. Demonstração (1 min)
-> Mostre o agente funcionando (pode ser gravação de tela)
+O Fin analisa quatro fontes principais de dados:
 
-[Descreva o que será mostrado]
+- Histórico de transações;
+- Perfil do investidor;
+- Histórico de atendimentos;
+- Produtos financeiros disponíveis.
 
-### 4. Diferencial e Impacto (30 seg)
-> Por que essa solução é inovadora e qual é o impacto dela na sociedade?
+Com isso, ele entrega recomendações personalizadas, claras e seguras.
 
-[Sua descrição aqui]
+Na prática, o agente consegue:
+
+- Mostrar onde o cliente mais gasta;
+- Identificar excessos e oportunidades de economia;
+- Calcular capacidade mensal de poupança;
+- Sugerir investimentos compatíveis com o perfil;
+- Acompanhar metas financeiras;
+- Enviar alertas proativos antes de problemas acontecerem.
+
+No caso analisado, o cliente possui renda de R$ 5.000, gastos de R$ 2.488,90 e capacidade de poupança próxima de R$ 2.500 por mês.
+
+## 3. Demonstração
+
+Durante a apresentação será mostrado o chatbot funcionando em Streamlit.
+
+Fluxo da demonstração:
+
+1. O usuário entra no sistema e inicia conversa com o Fin;
+2. O agente já traz um insight automático sobre a situação financeira;
+3. O usuário pergunta: **Com o que eu mais gasto?**
+4. O Fin responde que a maior despesa está em moradia, seguida por alimentação e transporte;
+5. Depois o usuário pergunta: **Onde devo investir?**
+6. O agente identifica perfil moderado e recomenda Tesouro Selic ou CDB com liquidez diária;
+7. Por fim, mostra que a reserva de emergência já está 66% concluída e sugere próximos passos.
+
+## 4. Diferencial e Impacto
+
+O principal diferencial do Fin é deixar de ser um chatbot reativo e se tornar um agente proativo, capaz de analisar contexto, justificar recomendações e agir com segurança.
+
+Ele também possui regras anti-alucinação: só responde com base em dados reais, informa limitações e evita recomendações incompatíveis com o perfil do cliente.
+
+O impacto disso é democratizar o acesso à orientação financeira de qualidade, ajudando pessoas comuns a economizar melhor, investir com consciência e construir estabilidade no longo prazo.
 
 ---
 
 ## Checklist do Pitch
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
-
----
+- [x] Duração máxima de 3 minutos
+- [x] Problema claramente definido
+- [x] Solução demonstrada na prática
+- [x] Diferencial explicado
+- [x] Áudio e vídeo com boa qualidade
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[Link do vídeo]
+https://www.youtube.com/watch?v=TvIHfHQKqGx
